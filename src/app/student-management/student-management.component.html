@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <h1>Danh sach sinh vien</h1>
+      <div class="row">
+        <div class="col-4" *ngFor="let student of studentList">
+          <app-student-item
+            (studentEmitter)="chooseStudent($event)"
+            [item]="student"
+          ></app-student-item>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <h1>Sinh vien duoc chon</h1>
+      <p class="lead" *ngFor="let student of selectedStudent; let i = index">
+        {{ i + 1 }}.{{ student.name }} - {{ student.className }}
+        <span class="text-warning">Xoa</span>
+      </p>
+    </div>
+  </div>
+</div>

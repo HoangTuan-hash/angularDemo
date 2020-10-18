@@ -1,0 +1,7 @@
+<p>demo-data-binding works!</p>
+<p>Name: {{name}}</p>
+<input [value]="name" [disabled] = "isDisabled"/>
+<!-- <img [src]="imgSource" alt=""> -->
+<button (click)="changeName()">Change name</button>
+<input [(ngModel)]="email" />
+<p>Email : {{email}}</p>

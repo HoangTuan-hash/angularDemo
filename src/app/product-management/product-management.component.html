@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="card mb-5">
+    <div class="card-header bg-dark text-white">
+      <p>Quản lý sản phẩm</p>
+    </div>
+    <div class="card-body">
+      <div class="d-flex" style="white-space: nowrap">
+        <input
+          class="form-control mx-3"
+          placeholder="MaSP"
+          [(ngModel)]="productID"
+        />
+        <input
+          class="form-control mx-3"
+          placeholder="TenSP"
+          [(ngModel)]="productName"
+        />
+        <input
+          class="form-control mx-3"
+          placeholder="Gia"
+          [(ngModel)]="price"
+        />
+        <button class="btn btn-success" (click)="addProduct()">
+          Thêm sản phẩm
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header bg-dark text-white">
+      <p>Danh sách sản phẩm</p>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Mã SP</th>
+            <th>Tên SP</th>
+            <th>Giá SP</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- dấu chấm hỏi ? gọi là optional chaining -->
+          <tr
+            [ngClass]="{ highLight: product.MaSP === selectedProduct?.MaSP }"
+            *ngFor="let product of product; let i = index"
+            (click)="selectProduct(product)"
+          >
+            <td>{{ i + 1 }}</td>
+            <td>{{ product.MaSP }}</td>
+            <td>{{ product.TenSP }}</td>
+            <td>{{ product.Gia }}</td>
+            <td>
+              <button
+                class="btn btn-danger"
+                (click)="deleteProduct(product.MaSP)"
+              >
+                Xóa
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

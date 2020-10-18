@@ -1,0 +1,33 @@
+//VD ve ngIf
+<button (click)= "makeDecision(true)">Fine</button>
+<button (click)= "makeDecision(false)">Sick</button>
+
+<p *ngIf = "isFine; else elseContent"> Go to Cybersoft</p>
+<!-- <p *ngIf = "!isFine">Go to Cybercore</p> -->
+<ng-template #elseContent>
+    <p >Go to CyberCore</p>
+    <p>Fine Again</p>
+</ng-template>
+
+<!-- ---------------*ngSwitch----------- -->
+<!-- <select (change)="selectMonth($event)">
+    <option value="1">Thang 1</option>
+    <option value="2">Thang 2</option>
+    <option value="3">Thang 3</option>
+    <option value="4">Thang 4</option>
+    <option value="5">Thang 5</option>
+</select> -->
+<select (change)="selectMonth($event)">
+    <option *ngFor="let item of monthOption" [value]="item.value">{{item.title}}</option>
+   
+</select>
+
+<div [ngSwitch]= "month">
+    <p *ngSwitchCase = "1">thang 1 co 31 ngay</p>
+    <p *ngSwitchCase = "2">thang 2 co 28 ngay</p>
+    <p *ngSwitchCase = "3">thang 3 co 31 ngay</p>
+    <p *ngSwitchCase = "4">thang 4 co 30 ngay</p>
+    <p *ngSwitchCase = "5">thang 5 co 31 ngay</p>
+    <p *ngSwitchDefault>KHong hop le!</p>
+    
+</div>

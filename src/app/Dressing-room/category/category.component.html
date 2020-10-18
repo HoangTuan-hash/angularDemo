@@ -1,0 +1,9 @@
+<div class="btn-group container-fluid mb-4">
+  <button
+    (click)="selectCate(cate.type)"
+    class="btn btn-primary"
+    *ngFor="let cate of categoryList"
+  >
+    {{ cate.showName }}
+  </button>
+</div>

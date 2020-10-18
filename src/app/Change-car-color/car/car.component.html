@@ -1,0 +1,12 @@
+<div class="control text-center">
+    <img src="../../../assets/img/icon-black.jpg" (click)="changeColor('black-car.jpg')"/>
+    <img src="../../../assets/img/icon-red.jpg" (click)="changeColor('red-car.jpg')"/>
+    <img src="../../../assets/img/icon-silver.jpg" (click)="changeColor('silver-car.jpg')"/>
+    <img src="../../../assets/img/icon-steel.jpg" (click)="changeColor('steel-car.jpg')"/>
+</div>
+<div class="text-center">
+    <!-- property binding -->
+    <img [src]="imgSrc"/>
+</div>
+
+ <!-- interpolation {{ }} -->
