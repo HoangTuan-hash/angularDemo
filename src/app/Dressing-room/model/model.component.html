@@ -5,4 +5,31 @@
   <div class="bikinibottom"></div>
   <div class="feetleft"></div>
   <div class="feetright"></div>
+  <!-- div hiện áo -->
+  <div
+    *ngIf="prodCollection.topclothes"
+    class="bikinitop"
+    [ngStyle]="{
+      'background-image': 'url(' + prodCollection.topclothes + ')',
+      'background-size': 'cover'
+    }"
+  ></div>
+  <!-- div hiện váy -->
+  <div
+    *ngIf="prodCollection.botclothes"
+    class="bikinibottom"
+    [ngStyle]="{
+      'background-image': 'url(' + prodCollection.botclothes + ')',
+      'background-size': 'cover'
+    }"
+  ></div>
+  <!-- div hiện giày  -->
+  <div
+    *ngIf="prodCollection.shoes"
+    class="shoes"
+    [ngStyle]="{
+      'background-image': 'url(' + prodCollection.shoes + ')',
+      'background-size': 'cover'
+    }"
+  ></div>
 </div>

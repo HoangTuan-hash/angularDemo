@@ -2,6 +2,6 @@
   <img class="card-img-top" [src]="prod.imgSrc_jpg" [alt]="prod.imgSrc_jpg" />
   <div class="card-body">
     <h4 class="card-title">{{ prod.name }}</h4>
-    <button class="btn btn-success">Thử</button>
+    <button (click)="tryCloth()" class="btn btn-success">Thử</button>
   </div>
 </div>

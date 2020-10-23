@@ -7,8 +7,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ProductItemComponent implements OnInit {
   @Input() prod: any;
-
+  @Output() productEmitter = new EventEmitter();
   constructor() {}
-
+  tryCloth() {
+    this.productEmitter.emit({
+      type: this.prod.type,
+      img: this.prod.imgSrc_png,
+    });
+  }
   ngOnInit(): void {}
 }

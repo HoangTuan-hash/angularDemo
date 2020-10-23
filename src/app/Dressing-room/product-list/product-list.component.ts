@@ -1,4 +1,11 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -313,12 +320,16 @@ export class ProductListComponent implements OnInit, OnChanges {
   displayProducts: any[];
 
   @Input() selectedCate: string;
-
+  @Output() productEmitter = new EventEmitter();
   ngOnInit(): void {}
   //Đây là lifeCycle chạy khi input thay đổi
   ngOnChanges() {
     this.displayProducts = this.products.filter(
       (item) => item.type === this.selectedCate
     );
+  }
+
+  tryCloth(prod: { type: string; img: string }) {
+    this.productEmitter.emit(prod);
   }
 }

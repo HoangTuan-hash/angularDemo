@@ -9,9 +9,12 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   selectedCate: string;
+  selectedProduct = {};
   selectCate(type: string) {
     this.selectedCate = type;
-    console.log(this.selectedCate);
+  }
+  tryCloth(prod: { type: string; img: string }) {
+    this.selectedProduct[prod.type] = prod.img;
   }
   ngOnInit(): void {}
 }

@@ -2,10 +2,13 @@
   <div class="row">
     <div class="col-7">
       <app-category (cateEmitter)="selectCate($event)"></app-category>
-      <app-product-list [selectedCate]="selectedCate"></app-product-list>
+      <app-product-list
+        (productEmitter)="tryCloth($event)"
+        [selectedCate]="selectedCate"
+      ></app-product-list>
     </div>
     <div class="col-5">
-      <app-model></app-model>
+      <app-model [prodCollection]="selectedProduct"></app-model>
     </div>
   </div>
 </div>

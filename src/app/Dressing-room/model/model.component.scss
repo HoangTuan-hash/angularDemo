@@ -63,5 +63,13 @@
     right: 33.3%;
     z-index: 1;
 }
-
+.shoes{
+    width: 500px;
+    height: 1000px;
+    position: absolute;
+    bottom: -39%;
+    right: -3.5%;
+    transform: scale(0.5);
+    z-index: 1
+}
 /* END MODEL */
